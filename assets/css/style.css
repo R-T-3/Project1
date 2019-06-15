@@ -1,0 +1,16 @@
+.jumbotron{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.card-header{
+    background: #4db0d2;
+    color: white;
+    font-weight: bold;
+}
+
+.card-body{
+    min-height: 500px;
+    border: 2px solid #dbeff6;
+}
