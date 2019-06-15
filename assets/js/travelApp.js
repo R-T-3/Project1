@@ -10,5 +10,19 @@ var firebaseConfig = {
     appId: "1:961111279668:web:87ce14f2ebc1dea4"
   };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Event listener for Skyscanner button
+$("#button").on("click", function(event) {
+    event.preventDefault();
+    console.log("im working");
+
+// Performing GET requests to the Kajak API and logging the responses to the console
+    $.ajax({
+        url: "https://apidojo-kayak-v1.p.rapidapi.com/flights/create-session",
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+    });
+});
