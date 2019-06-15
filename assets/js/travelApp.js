@@ -14,7 +14,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Event listener for Skyscanner button
-$("#button").on("click", function(event) {
+$("#searchBtn").on("click", function(event) {
     event.preventDefault();
     console.log("im working");
 
