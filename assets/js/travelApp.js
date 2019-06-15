@@ -26,3 +26,15 @@ $("#button").on("click", function(event) {
         console.log(response);
     });
 });
+
+function showAdvisory () {
+    var queryURL = "https://www.travel-advisory.info/api";
+
+    $ajax({
+        url: queryURL, 
+        method: "GET"
+    })
+        .then(function (response){
+
+        })
+    };
