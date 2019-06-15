@@ -25,4 +25,4 @@ $("#searchBtn").on("click", function(event) {
     }).then(function(response) {
         console.log(response);
     });
-});
+}); 
