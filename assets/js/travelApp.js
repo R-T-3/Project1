@@ -13,28 +13,22 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Event listener for Skyscanner button
-$("#button").on("click", function(event) {
+// Joke API variables
+var category = $("#category").val();
+var queryURL = "https://jokeapi.p.rapidapi.com/category/" + category + "?apikey=c22b0ed6b6msh56e05637c624c53p1e9095jsn6057431855e3";
+
+// Event listener for joke button
+$("#jokeBtn").on("click", function(event) {
     event.preventDefault();
     console.log("im working");
 
-// Performing GET requests to the Kajak API and logging the responses to the console
+// Performing GET requests to the joke API and logging the responses to the console
+
     $.ajax({
-        url: "https://apidojo-kayak-v1.p.rapidapi.com/flights/create-session",
+        url: queryURL,
         method: "GET"
-    }).then(function(response) {
+    }).then(function(response) { 
         console.log(response);
     });
+
 });
-
-function showAdvisory () {
-    var queryURL = "https://www.travel-advisory.info/api";
-
-    $ajax({
-        url: queryURL, 
-        method: "GET"
-    })
-        .then(function (response){
-
-        })
-    };
