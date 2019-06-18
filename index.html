@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group Project 1</title>
+      <!-- Link for bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Add link for css -->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!-- Link for Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+      
+</head>
+<body>
+    <!-- Use jumbotron feature -->
+
+    
+  <!-- Employee Tracker -->
+  <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <img src="assets/images/skar-banner.png" class="img-fluid">
+      
+    </div>
+
+    <div class="row">
+               
+    <!-- Card for skyscanner-->
+
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Plan Your Trip</div>
+          <div class="card-body">
+
+           <button id="searchBtn" class="btn-info">Search Flights</button>
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- card for advisory report -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Travel Advisory</div>
+          <div class="card-body">
+              <h3>Daily updated travel advisories</h3>
+              
+              <div class="dropdown bootstrap-select form-control"><select class="selectpicker form-control" name="search" id="country_search" data-live-search="true" tabindex="-98">
+                  <option value="" selected="">-- Pick Destination --</option>
+                          <optgroup label="Africa">
+                        
+                                <option value="https://www.travel-advisory.info/algeria">Algeria</option>
+                                <option value="https://www.travel-advisory.info/angola">Angola</option>
+                                <option value="https://www.travel-advisory.info/benin">Benin</option>
+                                <option value="https://www.travel-advisory.info/botswana">Botswana</option>
+                                <option value="https://www.travel-advisory.info/burkina-faso">Burkina Faso</option>
+                                <option value="https://www.travel-advisory.info/burundi">Burundi</option>
+                                <option value="https://www.travel-advisory.info/cameroon">Cameroon</option>
+                                <option value="https://www.travel-advisory.info/cape-verde">Cape Verde</option>
+                                <option value="https://www.travel-advisory.info/central-african-republic">Central African Republic</option>
+                                <option value="https://www.travel-advisory.info/chad">Chad</option>
+                                <option value="https://www.travel-advisory.info/comoros">Comoros</option>
+                                <option value="https://www.travel-advisory.info/democratic-republic-of-the-congo">Democratic Republic of the Congo</option>
+                                <option value="https://www.travel-advisory.info/djibouti">Djibouti</option>
+                                <option value="https://www.travel-advisory.info/egypt">Egypt</option>
+                                <option value="https://www.travel-advisory.info/equatorial-guinea">Equatorial Guinea</option>
+                                <option value="https://www.travel-advisory.info/eritrea">Eritrea</option>
+                                <option value="https://www.travel-advisory.info/ethiopia">Ethiopia</option>
+                                <option value="https://www.travel-advisory.info/gabon">Gabon</option>
+                                <option value="https://www.travel-advisory.info/gambia">Gambia</option>
+                                <option value="https://www.travel-advisory.info/ghana">Ghana</option>
+                                <option value="https://www.travel-advisory.info/guinea">Guinea</option>
+                                <option value="https://www.travel-advisory.info/guinea-bissau">Guinea-Bissau</option>
+                                <option value="https://www.travel-advisory.info/ivory-coast">Ivory Coast</option>
+                                <option value="https://www.travel-advisory.info/kenya">Kenya</option>
+                                <option value="https://www.travel-advisory.info/lesotho">Lesotho</option>
+                                <option value="https://www.travel-advisory.info/liberia">Liberia</option>
+                                <option value="https://www.travel-advisory.info/libya">Libya</option>
+                                <option value="https://www.travel-advisory.info/madagascar">Madagascar</option>
+                                <option value="https://www.travel-advisory.info/malawi">Malawi</option>
+                                <option value="https://www.travel-advisory.info/mali">Mali</option>
+                                <option value="https://www.travel-advisory.info/mauritania">Mauritania</option>
+                                <option value="https://www.travel-advisory.info/mauritius">Mauritius</option>
+                                <option value="https://www.travel-advisory.info/mayotte">Mayotte</option>
+                                <option value="https://www.travel-advisory.info/morocco">Morocco</option>
+                                <option value="https://www.travel-advisory.info/mozambique">Mozambique</option>
+                                <option value="https://www.travel-advisory.info/namibia">Namibia</option>
+                                <option value="https://www.travel-advisory.info/niger">Niger</option>
+                                <option value="https://www.travel-advisory.info/nigeria">Nigeria</option>
+                                <option value="https://www.travel-advisory.info/republic-of-the-congo">Republic of the Congo</option>
+                                <option value="https://www.travel-advisory.info/reunion">Reunion</option>
+                                <option value="https://www.travel-advisory.info/rwanda">Rwanda</option>
+                                <option value="https://www.travel-advisory.info/saint-helena">Saint Helena</option>
+                                <option value="https://www.travel-advisory.info/sao-tome-and-principe">Sao Tome and Principe</option>
+                                <option value="https://www.travel-advisory.info/senegal">Senegal</option>
+                                <option value="https://www.travel-advisory.info/seychelles">Seychelles</option>
+                                <option value="https://www.travel-advisory.info/sierra-leone">Sierra Leone</option>
+                                <option value="https://www.travel-advisory.info/somalia">Somalia</option>
+                                <option value="https://www.travel-advisory.info/south-africa">South Africa</option>
+                                <option value="https://www.travel-advisory.info/sudan">Sudan</option>
+                                <option value="https://www.travel-advisory.info/swaziland">Swaziland</option>
+                                <option value="https://www.travel-advisory.info/tanzania">Tanzania</option>
+                                <option value="https://www.travel-advisory.info/togo">Togo</option>
+                                <option value="https://www.travel-advisory.info/tunisia">Tunisia</option>
+                                <option value="https://www.travel-advisory.info/uganda">Uganda</option>
+                                <option value="https://www.travel-advisory.info/western-sahara">Western Sahara</option>
+                                <option value="https://www.travel-advisory.info/zambia">Zambia</option>
+                                <option value="https://www.travel-advisory.info/zimbabwe">Zimbabwe</option>
+                              </optgroup>
+                    
+                            <optgroup label="Asia">
+                        
+                                <option value="https://www.travel-advisory.info/afghanistan">Afghanistan</option>
+                                <option value="https://www.travel-advisory.info/armenia">Armenia</option>
+                                <option value="https://www.travel-advisory.info/azerbaijan">Azerbaijan</option>
+                                <option value="https://www.travel-advisory.info/bahrain">Bahrain</option>
+                                <option value="https://www.travel-advisory.info/bangladesh">Bangladesh</option>
+                                <option value="https://www.travel-advisory.info/bhutan">Bhutan</option>
+                                <option value="https://www.travel-advisory.info/brunei">Brunei</option>
+                                <option value="https://www.travel-advisory.info/cambodia">Cambodia</option>
+                                <option value="https://www.travel-advisory.info/china">China</option>
+                                <option value="https://www.travel-advisory.info/christmas-island">Christmas Island</option>
+                                <option value="https://www.travel-advisory.info/cocos-islands">Cocos Islands</option>
+                                <option value="https://www.travel-advisory.info/georgia">Georgia</option>
+                                <option value="https://www.travel-advisory.info/hong-kong">Hong Kong</option>
+                                <option value="https://www.travel-advisory.info/india">India</option>
+                                <option value="https://www.travel-advisory.info/indonesia">Indonesia</option>
+                                <option value="https://www.travel-advisory.info/iran">Iran</option>
+                                <option value="https://www.travel-advisory.info/iraq">Iraq</option>
+                                <option value="https://www.travel-advisory.info/israel">Israel</option>
+                                <option value="https://www.travel-advisory.info/japan">Japan</option>
+                                <option value="https://www.travel-advisory.info/jordan">Jordan</option>
+                                <option value="https://www.travel-advisory.info/kazakhstan">Kazakhstan</option>
+                                <option value="https://www.travel-advisory.info/kuwait">Kuwait</option>
+                                <option value="https://www.travel-advisory.info/kyrgyzstan">Kyrgyzstan</option>
+                                <option value="https://www.travel-advisory.info/laos">Laos</option>
+                                <option value="https://www.travel-advisory.info/lebanon">Lebanon</option>
+                                <option value="https://www.travel-advisory.info/macao">Macao</option>
+                                <option value="https://www.travel-advisory.info/malaysia">Malaysia</option>
+                                <option value="https://www.travel-advisory.info/maldives">Maldives</option>
+                                <option value="https://www.travel-advisory.info/mongolia">Mongolia</option>
+                                <option value="https://www.travel-advisory.info/myanmar">Myanmar</option>
+                                <option value="https://www.travel-advisory.info/nepal">Nepal</option>
+                                <option value="https://www.travel-advisory.info/north-korea">North Korea</option>
+                                <option value="https://www.travel-advisory.info/oman">Oman</option>
+                                <option value="https://www.travel-advisory.info/pakistan">Pakistan</option>
+                                <option value="https://www.travel-advisory.info/palestinian-territory">Palestinian Territory</option>
+                                <option value="https://www.travel-advisory.info/philippines">Philippines</option>
+                                <option value="https://www.travel-advisory.info/qatar">Qatar</option>
+                                <option value="https://www.travel-advisory.info/saudi-arabia">Saudi Arabia</option>
+                                <option value="https://www.travel-advisory.info/singapore">Singapore</option>
+                                <option value="https://www.travel-advisory.info/south-korea">South Korea</option>
+                                <option value="https://www.travel-advisory.info/sri-lanka">Sri Lanka</option>
+                                <option value="https://www.travel-advisory.info/syria">Syria</option>
+                                <option value="https://www.travel-advisory.info/taiwan">Taiwan</option>
+                                <option value="https://www.travel-advisory.info/tajikistan">Tajikistan</option>
+                                <option value="https://www.travel-advisory.info/thailand">Thailand</option>
+                                <option value="https://www.travel-advisory.info/turkey">Turkey</option>
+                                <option value="https://www.travel-advisory.info/turkmenistan">Turkmenistan</option>
+                                <option value="https://www.travel-advisory.info/united-arab-emirates">United Arab Emirates</option>
+                                <option value="https://www.travel-advisory.info/uzbekistan">Uzbekistan</option>
+                                <option value="https://www.travel-advisory.info/vietnam">Vietnam</option>
+                                <option value="https://www.travel-advisory.info/yemen">Yemen</option>
+                              </optgroup>
+                    
+                            <optgroup label="Europe">
+                        
+                                <option value="https://www.travel-advisory.info/albania">Albania</option>
+                                <option value="https://www.travel-advisory.info/andorra">Andorra</option>
+                                <option value="https://www.travel-advisory.info/austria">Austria</option>
+                                <option value="https://www.travel-advisory.info/belarus">Belarus</option>
+                                <option value="https://www.travel-advisory.info/belgium">Belgium</option>
+                                <option value="https://www.travel-advisory.info/bosnia-and-herzegovina">Bosnia and Herzegovina</option>
+                                <option value="https://www.travel-advisory.info/bulgaria">Bulgaria</option>
+                                <option value="https://www.travel-advisory.info/croatia">Croatia</option>
+                                <option value="https://www.travel-advisory.info/cyprus">Cyprus</option>
+                                <option value="https://www.travel-advisory.info/czech-republic">Czech Republic</option>
+                                <option value="https://www.travel-advisory.info/denmark">Denmark</option>
+                                <option value="https://www.travel-advisory.info/estonia">Estonia</option>
+                                <option value="https://www.travel-advisory.info/faroe-islands">Faroe Islands</option>
+                                <option value="https://www.travel-advisory.info/finland">Finland</option>
+                                <option value="https://www.travel-advisory.info/france">France</option>
+                                <option value="https://www.travel-advisory.info/germany">Germany</option>
+                                <option value="https://www.travel-advisory.info/gibraltar">Gibraltar</option>
+                                <option value="https://www.travel-advisory.info/greece">Greece</option>
+                                <option value="https://www.travel-advisory.info/guernsey">Guernsey</option>
+                                <option value="https://www.travel-advisory.info/hungary">Hungary</option>
+                                <option value="https://www.travel-advisory.info/iceland">Iceland</option>
+                                <option value="https://www.travel-advisory.info/ireland">Ireland</option>
+                                <option value="https://www.travel-advisory.info/isle-of-man">Isle of Man</option>
+                                <option value="https://www.travel-advisory.info/italy">Italy</option>
+                                <option value="https://www.travel-advisory.info/jersey">Jersey</option>
+                                <option value="https://www.travel-advisory.info/kosovo">Kosovo</option>
+                                <option value="https://www.travel-advisory.info/latvia">Latvia</option>
+                                <option value="https://www.travel-advisory.info/liechtenstein">Liechtenstein</option>
+                                <option value="https://www.travel-advisory.info/lithuania">Lithuania</option>
+                                <option value="https://www.travel-advisory.info/luxembourg">Luxembourg</option>
+                                <option value="https://www.travel-advisory.info/macedonia">Macedonia</option>
+                                <option value="https://www.travel-advisory.info/malta">Malta</option>
+                                <option value="https://www.travel-advisory.info/moldova">Moldova</option>
+                                <option value="https://www.travel-advisory.info/monaco">Monaco</option>
+                                <option value="https://www.travel-advisory.info/montenegro">Montenegro</option>
+                                <option value="https://www.travel-advisory.info/netherlands">Netherlands</option>
+                                <option value="https://www.travel-advisory.info/norway">Norway</option>
+                                <option value="https://www.travel-advisory.info/poland">Poland</option>
+                                <option value="https://www.travel-advisory.info/portugal">Portugal</option>
+                                <option value="https://www.travel-advisory.info/romania">Romania</option>
+                                <option value="https://www.travel-advisory.info/russia">Russia</option>
+                                <option value="https://www.travel-advisory.info/san-marino">San Marino</option>
+                                <option value="https://www.travel-advisory.info/serbia">Serbia</option>
+                                <option value="https://www.travel-advisory.info/slovakia">Slovakia</option>
+                                <option value="https://www.travel-advisory.info/slovenia">Slovenia</option>
+                                <option value="https://www.travel-advisory.info/spain">Spain</option>
+                                <option value="https://www.travel-advisory.info/svalbard-and-jan-mayen">Svalbard and Jan Mayen</option>
+                                <option value="https://www.travel-advisory.info/sweden">Sweden</option>
+                                <option value="https://www.travel-advisory.info/switzerland">Switzerland</option>
+                                <option value="https://www.travel-advisory.info/ukraine">Ukraine</option>
+                                <option value="https://www.travel-advisory.info/united-kingdom">United Kingdom</option>
+                                <option value="https://www.travel-advisory.info/vatican">Vatican</option>
+                              </optgroup>
+                    
+                            <optgroup label="North America">
+                        
+                                <option value="https://www.travel-advisory.info/anguilla">Anguilla</option>
+                                <option value="https://www.travel-advisory.info/antigua-and-barbuda">Antigua and Barbuda</option>
+                                <option value="https://www.travel-advisory.info/aruba">Aruba</option>
+                                <option value="https://www.travel-advisory.info/bahamas">Bahamas</option>
+                                <option value="https://www.travel-advisory.info/barbados">Barbados</option>
+                                <option value="https://www.travel-advisory.info/belize">Belize</option>
+                                <option value="https://www.travel-advisory.info/bermuda">Bermuda</option>
+                                <option value="https://www.travel-advisory.info/british-virgin-islands">British Virgin Islands</option>
+                                <option value="https://www.travel-advisory.info/canada">Canada</option>
+                                <option value="https://www.travel-advisory.info/cayman-islands">Cayman Islands</option>
+                                <option value="https://www.travel-advisory.info/costa-rica">Costa Rica</option>
+                                <option value="https://www.travel-advisory.info/cuba">Cuba</option>
+                                <option value="https://www.travel-advisory.info/dominica">Dominica</option>
+                                <option value="https://www.travel-advisory.info/dominican-republic">Dominican Republic</option>
+                                <option value="https://www.travel-advisory.info/el-salvador">El Salvador</option>
+                                <option value="https://www.travel-advisory.info/greenland">Greenland</option>
+                                <option value="https://www.travel-advisory.info/grenada">Grenada</option>
+                                <option value="https://www.travel-advisory.info/guadeloupe">Guadeloupe</option>
+                                <option value="https://www.travel-advisory.info/guatemala">Guatemala</option>
+                                <option value="https://www.travel-advisory.info/haiti">Haiti</option>
+                                <option value="https://www.travel-advisory.info/honduras">Honduras</option>
+                                <option value="https://www.travel-advisory.info/jamaica">Jamaica</option>
+                                <option value="https://www.travel-advisory.info/martinique">Martinique</option>
+                                <option value="https://www.travel-advisory.info/mexico">Mexico</option>
+                                <option value="https://www.travel-advisory.info/montserrat">Montserrat</option>
+                                <option value="https://www.travel-advisory.info/nicaragua">Nicaragua</option>
+                                <option value="https://www.travel-advisory.info/panama">Panama</option>
+                                <option value="https://www.travel-advisory.info/puerto-rico">Puerto Rico</option>
+                                <option value="https://www.travel-advisory.info/saint-barthelemy">Saint Barthélemy</option>
+                                <option value="https://www.travel-advisory.info/saint-kitts-and-nevis">Saint Kitts and Nevis</option>
+                                <option value="https://www.travel-advisory.info/saint-lucia">Saint Lucia</option>
+                                <option value="https://www.travel-advisory.info/saint-martin">Saint Martin</option>
+                                <option value="https://www.travel-advisory.info/saint-pierre-and-miquelon">Saint Pierre and Miquelon</option>
+                                <option value="https://www.travel-advisory.info/saint-vincent-and-the-grenadines">Saint Vincent and the Grenadines</option>
+                                <option value="https://www.travel-advisory.info/trinidad-and-tobago">Trinidad and Tobago</option>
+                                <option value="https://www.travel-advisory.info/turks-and-caicos-islands">Turks and Caicos Islands</option>
+                                <option value="https://www.travel-advisory.info/us-virgin-islands">U.S. Virgin Islands</option>
+                                <option value="https://www.travel-advisory.info/united-states">United States</option>
+                              </optgroup>
+                    
+                            <optgroup label="Oceania">
+                        
+                                <option value="https://www.travel-advisory.info/american-samoa">American Samoa</option>
+                                <option value="https://www.travel-advisory.info/australia">Australia</option>
+                                <option value="https://www.travel-advisory.info/cook-islands">Cook Islands</option>
+                                <option value="https://www.travel-advisory.info/east-timor">East Timor</option>
+                                <option value="https://www.travel-advisory.info/fiji">Fiji</option>
+                                <option value="https://www.travel-advisory.info/french-polynesia">French Polynesia</option>
+                                <option value="https://www.travel-advisory.info/guam">Guam</option>
+                                <option value="https://www.travel-advisory.info/kiribati">Kiribati</option>
+                                <option value="https://www.travel-advisory.info/marshall-islands">Marshall Islands</option>
+                                <option value="https://www.travel-advisory.info/micronesia">Micronesia</option>
+                                <option value="https://www.travel-advisory.info/new-caledonia">New Caledonia</option>
+                                <option value="https://www.travel-advisory.info/new-zealand">New Zealand</option>
+                                <option value="https://www.travel-advisory.info/niue">Niue</option>
+                                <option value="https://www.travel-advisory.info/norfolk-island">Norfolk Island</option>
+                                <option value="https://www.travel-advisory.info/northern-mariana-islands">Northern Mariana Islands</option>
+                                <option value="https://www.travel-advisory.info/palau">Palau</option>
+                                <option value="https://www.travel-advisory.info/papua-new-guinea">Papua New Guinea</option>
+                                <option value="https://www.travel-advisory.info/pitcairn">Pitcairn</option>
+                                <option value="https://www.travel-advisory.info/samoa">Samoa</option>
+                                <option value="https://www.travel-advisory.info/solomon-islands">Solomon Islands</option>
+                                <option value="https://www.travel-advisory.info/tonga">Tonga</option>
+                                <option value="https://www.travel-advisory.info/tuvalu">Tuvalu</option>
+                                <option value="https://www.travel-advisory.info/vanuatu">Vanuatu</option>
+                                <option value="https://www.travel-advisory.info/wallis-and-futuna">Wallis and Futuna</option>
+                              </optgroup>
+                    
+                            <optgroup label="South America">
+                        
+                                <option value="https://www.travel-advisory.info/argentina">Argentina</option>
+                                <option value="https://www.travel-advisory.info/bolivia">Bolivia</option>
+                                <option value="https://www.travel-advisory.info/brazil">Brazil</option>
+                                <option value="https://www.travel-advisory.info/chile">Chile</option>
+                                <option value="https://www.travel-advisory.info/colombia">Colombia</option>
+                                <option value="https://www.travel-advisory.info/ecuador">Ecuador</option>
+                                <option value="https://www.travel-advisory.info/falkland-islands">Falkland Islands</option>
+                                <option value="https://www.travel-advisory.info/french-guiana">French Guiana</option>
+                                <option value="https://www.travel-advisory.info/guyana">Guyana</option>
+                                <option value="https://www.travel-advisory.info/paraguay">Paraguay</option>
+                                <option value="https://www.travel-advisory.info/peru">Peru</option>
+                                <option value="https://www.travel-advisory.info/suriname">Suriname</option>
+                                <option value="https://www.travel-advisory.info/uruguay">Uruguay</option>
+                                <option value="https://www.travel-advisory.info/venezuela">Venezuela</option>
+                              </optgroup>
+                       <div class="show-advisory"></div>
+                          </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="country_search" title="-- Pick Destination --"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">-- Pick Destination --</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner open" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner "></ul></div></div></div>
+                            
+
+                    
+           
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">Search Results Here</div>
+          <div id="searchResults" class="card-body">
+            <p>Search content will go here</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- Header with SKAR -->
+
+    <!-- Use cards for the 2 feature -->
+
+    <!-- 2 column layout for the 2 image search features -->
+
+    <!-- Use images behind the html / css widget -->
+
+<script src="https://www.travel-advisory.info/widget.js"></script>
+
+    <!-- Bootstrap js files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/1.6.5/kute.min.js"></script>
+<script src="assets/js/travelApp.js"></script>
+<!--Removed duplicate bootstrap link from this section-->
+
+
+<!-- Add javascript link for project file -->
+
+</body>
+</html>
+
