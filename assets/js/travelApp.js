@@ -1,5 +1,3 @@
-Firebase config
-
 var firebaseConfig = {
     apiKey: "AIzaSyAaSPQR9LVV1Mewl9Nj0KatPt3qDut_dhg",
     authDomain: "skar-7f308.firebaseapp.com",
@@ -16,9 +14,7 @@ firebase.initializeApp(firebaseConfig);
 // Joke API variables
 var category = $("#category").val();
 var queryURL = "https://jokeapi.p.rapidapi.com/category/" + "Any" + "?format=json";
-// https://sv443.net/jokeapi/category/
-// "?apikey=c22b0ed6b6msh56e05637c624c53p1e9095jsn6057431855e3"
-// Event listener for joke button
+
 $("#jokeBtn").on("click", function (event) {
     event.preventDefault();
     console.log("im working");
