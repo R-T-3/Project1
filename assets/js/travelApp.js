@@ -11,6 +11,9 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// Variable to reference database
+var database = firebase.database();
+
 // Joke API variables
 var category = $("#category").val();
 var queryURL = "https://jokeapi.p.rapidapi.com/category/" + "Any" + "?format=json";
@@ -33,8 +36,17 @@ $("#jokeBtn").on("click", function (event) {
         if (response.type === "twopart") {
             $(".joke-text").html(response.setup);
             $(".joke-text2part").html(response.delivery);
+            database.ref().push({
+                TwoLineJoke: response.setup,
+                TwolineJokeAnswer: response.delivery
+            });
+            console.log("sent double to database");
         } else { 
-            $(".joke-text").html(response.joke)
+            $(".joke-text").html(response.joke);
+            database.ref().push({
+                OneLineJoke: response.joke
+            });
+            console.log("sent to database");
         }
     });
 });
