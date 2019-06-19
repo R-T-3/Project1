@@ -30,50 +30,36 @@ $("#jokeBtn").on("click", function (event) {
         success: (function (result) {})
     }).then(function (response) {
         console.log(response);
-        
+        if (response.type === "twopart") {
+            $(".joke-text").html(response.setup);
+            $(".joke-text2part").html(response.delivery);
+        } else { 
+            $(".joke-text").html(response.joke)
+        }
     });
 });
 
-function displayGif() {
-    var showGif = document.createElement('div');
-    showGif.innerHTML = '<div class="gif-space">' + searchString + '</div>';
-}
 
-function clearInput() {
-    document.querySelector("form").reset();
-}
-
-$("#gif-me").on("click", function () {
-    document.querySelector('.done').remove();
-    var gifSearch = $("input.form-control").val();
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=0flPku5i7SaRbjTl02ZnhKrnYHH6Z4uk&q=" + gifSearch + "&limit=10&offset=0&rating=G&lang=en";
+$("button").on("click", function () {
+    var queryGifURL = "https://api.giphy.com/v1/gifs/random?api_key=0UIZpz3eQMaXs9t940Bi7LYbUZz6QExO&tag=laugh&rating=PG";
 
     $.ajax({
-            url: queryURL,
+            url: queryGifURL,
             method: "GET"
         })
         .then(function (response) {
-            for (var j = 0; j < response.data.length; j++) {
-                var imageUrl = response.data[j].images.original.url;
+                var imageUrl = response.data.images.original.url;
                 var gifImage = $("<img>");
-                gifImage.attr("src", response.data[j].images.original_still.url);
-                gifImage.attr("data-still", response.data[j].images.original_still.url);
+                gifImage.attr("src", response.data.images.original.url);
                 gifImage.attr("data-animate", imageUrl);
                 gifImage.attr("data-state", "still");
                 gifImage.attr("alt", "gif image");
-                $("#images").prepend(gifImage);
-                $(gifImage).on("click", function () {
-                    var state = $(this).attr("data-state");
-                    if (state === "still") {
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    } else {
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still");
-                    }
-                });
-                clearInput(gifSearch);
-            }
+                $(".images").html(gifImage);
         })
-    displayGif(gifSearch);
+});
+
+
+var tween = KUTE.fromTo('button',{rotate:0},{rotate:-720});
+$("button").on("click", function () {
+tween.start();
 });
