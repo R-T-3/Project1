@@ -1,3 +1,9 @@
+body{
+    background-image: url(../images/comedy-curtain.jpg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
 .jumbotron{
     background-color: black;
     color: white;
@@ -5,16 +11,34 @@
 }
 
 .card-header{
-    background: #4db0d2;
-    color: white;
-    font-weight: bold;
+        background: #010101;
+        color: #ffc;
+        font-family: 'Audiowide', cursive;
+        font-weight: bold;
+        font-size: 20px;
 }
 
-.card-body{
+.card-body {
     min-height: 500px;
-    border: 2px solid #dbeff6;
+    border: 2px solid hsl(196, 60%, 91%);
+    overflow: hidden;
+    background: antiquewhite;
+    font-family: 'Bangers', cursive;
+    font-size: 1.4em;
 }
 
 img {
     margin: 10px auto;
+}
+
+p.joke-text, p.joke-text2part {
+    margin: 10px;
+    padding: 10px 0;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    margin: 10px 0;
 }
